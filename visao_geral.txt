@@ -1,0 +1,16 @@
+Pra que serve
+Facilitar acessibilidade ao serviço de acompanhantes
+
+Principais funcionalidades
+Pesquisar acompanhantes
+Requisitar trabalho
+Cadastrar acompanhante
+Alterar cadastro
+Sinalizar disponibilidade
+
+Tipos de usuários previstos
+Acompanhantes e Clientes
+
+Estrutura de diretório do projeto
+Separar views em pastas com seus respectivos arquivos
+Pasta principal com assets
