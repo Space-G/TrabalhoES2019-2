@@ -11,3 +11,12 @@ GP é um sistema que visa facilitar a comunicação entre acompanhantes e seus c
 - CSS 4
 
 - PostgreSQL 12.0
+
+# Padrão de commit
+
+Símbolo inicial do commit | Descrição
+------------------------- | ----------
++ | Adição de funcionalidade
+- | Correção de bugs
+/ | Trabalho inacabado
+* | Alteração de várias funcionalidades
