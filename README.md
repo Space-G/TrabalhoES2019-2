@@ -16,7 +16,7 @@ GP é um sistema que visa facilitar a comunicação entre acompanhantes e seus c
 
 Símbolo inicial do commit | Descrição
 ------------------------- | ----------
-+ | Adição de funcionalidade
-- | Correção de bugs
-/ | Trabalho inacabado
-* | Alteração de várias funcionalidades
+\+ | Adição de funcionalidade
+\- | Correção de bugs
+\/ | Trabalho inacabado
+\* | Alteração de várias funcionalidades
