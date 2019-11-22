@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Cadastro</title>
+	<link rel="stylesheet" type="text/css" href="../Styles/geral.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="cadastro.js"></script>
+</head>
+<body>
+	<div>
+		<h1>GP</h1>
+		<h4>Gabriel's Picker</h4>
+	</div>
+	<div class="menu">
+		<div>
+			<label for="nome">Nome: </label>
+			<input id="nome" type="text">
+		</div>
+		<div>
+			<label for="cpf">CPF: </label>
+			<input id="cpf" type="text">
+		</div>
+		<div>
+			<label for="genero">Gênero: </label>
+			<select>
+				<option value="M">Masculino</option>
+				<option value="F">Feminino</option>
+				<option value="O">Outro</option>
+				<option value="PNI">Prefiro não informar</option>
+			</select>
+		</div>
+		<div>
+			<label for="email">E-mail: </label>
+			<input id="email" type="text">
+		</div>
+		<div>
+			<label for="senha">Senha: </label>
+			<input id="senha" type="text">
+		</div>
+		<div>
+			<label for="confirma-senha">Confirme a senha: </label>
+			<input id="confirma-senha" type="text">
+		</div>
+		<div>
+			<label for="tipo-usuario">O que você deseja ser: </label>
+			<div id="tipo-usuario" class="letra-branca">
+				<input value="acompanhante" type="radio" name="tipo-usuario">Acompanhante
+				<input value="cliente" type="radio" name="tipo-usuario">Cliente
+			</div>
+		</div>
+		<div>
+			<label for="fetiches">Fetiches: </label>
+			<select multiple>
+					<option value="pe">Pé</option>
+				<option value="mao">Mão</option>
+				<option value="bunda">Bunda</option>
+				<option value="peitos">Peitos</option>
+			</select>
+		</div>
+		<div>
+			<label for="generos-desejados">Gêneros desejados: </label>
+			<select multiple>
+				<option value="M">Masculino</option>
+				<option value="F">Feminino</option>
+				<option value="O">Outro</option>
+				<option value="PNI">Prefiro não informar</option>
+			</select>
+		</div>
+		<div>
+			<button class="botao" onclick="voltar()">Voltar</button>
+			<button class="botao" onclick="cadastrar()">Enviar</button>
+		</div>
+	</div>
+</body>
+</html>

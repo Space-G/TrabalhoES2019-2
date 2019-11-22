@@ -1,0 +1,126 @@
+* {
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+	font-size: 100px !important;
+	color: black !important;
+	text-align: center;
+}
+h4 {
+	font-size: 30px !important;
+	color: black !important;
+	text-align: center;
+}
+
+.letra-branca {
+	color: white !important;
+}
+
+.espaco-radio {
+	background-color: blue !important;
+}
+
+
+div {
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+
+label {
+	color: white;
+}
+
+.body {
+	margin-top: 100px;
+}
+
+.menu {
+	background-color: black;
+	text-align: center;
+}
+
+.item {
+	margin-bottom: 5em;
+}
+
+.item-2 {
+	margin-top: -2.5em;
+	margin-bottom: 5em;
+}
+
+.sub-item {
+	margin-bottom: 1em;
+}
+
+.input-number {
+	height: 2em;
+	background-color: white;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 5px;
+	text-align: center;
+}
+
+.input-file {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.input-file:hover {
+	cursor: pointer;
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.input-file:active {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.input-file:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+table, td{
+	border: 1px solid black !important;
+}
+
+.botao {
+	border: 1px solid white;
+	border-radius: 3px;
+	background-color: black;
+	color: white;
+	width: 70px;
+	height: 30px;
+}
+
+.botao:hover {
+	background-color: white;
+	color: black;
+}
+
+.botao:active {
+	background-color: darkgray;
+}
+
+.botao:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+ 
+input[type="number"] {
+	-moz-appearance: textfield;
+}
