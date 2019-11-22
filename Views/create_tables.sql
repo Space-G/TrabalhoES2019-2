@@ -1,3 +1,7 @@
+CREATE DATABASE gabriels_picker;
+
+USE gabriels_picker;
+
 CREATE TABLE user(
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(32) NOT NULL,
