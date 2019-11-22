@@ -1,4 +1,4 @@
-INSERT INTO user(name, cpf, email, password_hash, picture_file, gender, gender_identity, is_escort, price);
+INSERT INTO user(name, cpf, email, password_hash, picture_file, gender, gender_identity, is_escort, price)
 VALUES
     ('Taco',0,'taco@taco.taco',0,'1.jpg','Feminino','Cisgênero',true,0),
     ('2B',1,'2b@2b.2b',0,'2.jpg','Feminino','Trans (Não-Operado)',true,0),
