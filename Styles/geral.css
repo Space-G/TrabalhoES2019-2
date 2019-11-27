@@ -3,6 +3,15 @@
 	font-family: 'Courier New', Courier, monospace
 }
 
+p {
+	font-size: 12px !important;
+}
+
+a {
+	color: blueviolet !important;
+	text-decoration: none !important;
+}
+
 h1 {
 	font-size: 100px !important;
 	color: black !important;
@@ -10,8 +19,15 @@ h1 {
 	margin: 0px 0px 0px 0px !important;
 }
 
+h3 {
+	font-size: 35px !important;
+	color: white !important;
+	text-align: center;
+	margin: 0px 0px 0px 0px !important;
+}
+
 h4 {
-	font-size: 30px !important;
+	font-size: 20px !important;
 	color: black !important;
 	text-align: center;
 	margin: 0px 0px 20px 0px !important;
@@ -54,6 +70,7 @@ p {
 .botao:hover {
 	background-color: white;
 	color: black;
+	cursor: pointer;
 }
 
 .botao:active {
@@ -63,4 +80,8 @@ p {
 .botao:focus {
 	text-decoration: none !important;
 	outline: none !important;
+}
+
+.espacamento-maior {
+	margin-bottom: 50px !important;
 }
