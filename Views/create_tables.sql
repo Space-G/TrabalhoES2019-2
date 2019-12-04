@@ -1,6 +1,13 @@
-CREATE DATABASE gabriels_picker;
+CREATE DATABASE gabriels_picker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE gabriels_picker;
+
+CREATE TABLE regions(
+    region_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    estado SET("AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE",
+        "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO") NOT NULL,
+    regiao VARCHAR(64)
+);
 
 CREATE TABLE user(
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -12,8 +19,10 @@ CREATE TABLE user(
     gender ENUM('Masculino', 'Feminino', 'Outro') NOT NULL,
     gender_identity ENUM('Cisgênero', 'Trans (Não-Operado)', 'Trans (Operado)', 'Intersexo', 'Outro') NOT NULL,
     contact VARCHAR(128) NULL,
+    region INT(6) UNSIGNED NULL,
     is_escort BOOLEAN NOT NULL,
-    price DECIMAL(7, 2)
+    price DECIMAL(7, 2) NULL,
+    FOREIGN KEY (region) REFERENCES regions(region_id) ON DELETE SET NULL
 );
 
 CREATE TABLE user_fetishes(
