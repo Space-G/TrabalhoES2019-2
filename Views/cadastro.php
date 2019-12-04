@@ -2,7 +2,7 @@
 $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 
 try {
     $insertUser   = $db->prepare('INSERT INTO user( name,  email,  password_hash,  cpf,  gender,  gender_identity,  contact,  region,  is_escort) 
@@ -22,7 +22,7 @@ try {
 
     $db->commit();
 
-    echo json_encode(array('success' => true, 'msg' => ''));
+    echo json_encode(array('success' => true, 'msg' => null));
 }
 catch (\Exception $e){
     if ($db->inTransaction()){
