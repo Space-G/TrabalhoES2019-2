@@ -33,13 +33,38 @@ h4 {
 	margin: 0px 0px 20px 0px !important;
 }
 
+h2 {
+	color: white !important;
+	font-size: 50px !important;
+	padding: 0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+}
+
+h5 {
+	color: white !important;
+	font-size: 10px !important;
+	padding: 0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px !important;
+}
+
+.sem-padding {
+	padding: 0px 0px 0px 0px !important;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
 .letra-branca {
 	color: white !important;
 }
 
 div {
-	padding-bottom: 7px;
-	padding-top: 7px;
+	padding: 7px 10px 7px 10px;
 }
 
 label {
@@ -82,6 +107,36 @@ p {
 	outline: none !important;
 }
 
+a:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+a:active {
+	text-decoration: none !important;
+	outline: none !important;	
+}
+
 .espacamento-maior {
 	margin-bottom: 50px !important;
+}
+
+.alinhar-texto-esquerda {
+	text-align: left !important;
+}
+
+.espacamento-topo {
+	margin-top: 100px !important;
+}
+
+.botao-medio {
+	width: 220px !important;
+}
+
+.botao-maior {
+	width: 300px !important;
+}
+
+.width-completo {
+	width: 75%;
 }

@@ -2,18 +2,21 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
-	<title>Cadastro</title>
+	<title>Editar Perfil</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/geral.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="cadastro.js"></script>
+	<script type="text/javascript" src="editar-perfil.js"></script>
 </head>
 <body>
-	<div>
-		<h1>GP</h1>
-		<h4>Gabriel's Picker</h4>
-	</div>
 	<div class="menu">
-		<div>
+		<div class="sem-padding float-left">
+			<h2>GP</h2>
+			<h5>Gabriel's Picker</h5>
+		</div>
+		<div class="sem-padding float-right">
+			<a href="perfil.html"><h4 class="letra-branca">Voltar</h4></a>
+		</div>
+		<div class="espacamento-topo">
 			<label for="nome">Nome: </label>
 			<input id="nome" type="text">
 		</div>
@@ -71,8 +74,7 @@
 			</select>
 		</div>
 		<div>
-			<a href="login.html"><button class="botao">Voltar</button></a>
-			<button class="botao" onclick="cadastrar()">Enviar</button>
+			<button class="botao" onclick="editarPerfil()">Enviar</button>
 		</div>
 	</div>
 </body>
