@@ -3,7 +3,7 @@ $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "gp","
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
 //header('Content-Type: application/json');
-if (!isset($_COOKIE["PHPSESSID"])){
+if (!isset($_SESSION)){
 session_start();}
 try {
 	if (isset($_POST)) { // checa se tem informações necessárias para continuar
