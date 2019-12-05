@@ -2,6 +2,8 @@
 $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
+//header('Content-Type: application/json');
+
 try{
     if (isset($_POST['target_id'])){ // recebeu informações suficientes para executar?
         $get_score_stmt = $db->prepare('SELECT AVG(score) FROM ratings WHERE subject_id = ?');
