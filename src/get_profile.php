@@ -1,5 +1,5 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
+$db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 'gp');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
 //header('Content-Type: application/json');
