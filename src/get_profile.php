@@ -3,7 +3,9 @@ $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
 //header('Content-Type: application/json');
-session_start();
+try{
+sesson_start();
+} catch (\Exception $e){}
 try {
 	if (isset($_POST)) { // checa se tem informações necessárias para continuar
 		$get_profile_stmt = $db->prepare("SELECT id, name, picture_file, gender, gender_identity, is_escort, price, contact FROM user WHERE id = ?");

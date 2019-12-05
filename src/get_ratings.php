@@ -4,7 +4,9 @@ $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extre
 
 //header('Content-Type: application/json');
 
+try{
 session_start();
+} catch (\Exception $e){}
 try{
     if (isset($_POST['target_id'])){ // recebeu informações suficientes para executar?
         $get_score_stmt = $db->prepare('SELECT AVG(score) FROM ratings WHERE subject_id = ?');

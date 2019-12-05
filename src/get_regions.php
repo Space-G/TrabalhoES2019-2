@@ -1,8 +1,9 @@
 <?php
 $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 'gp');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
-
+try{
 session_start();
+} catch (\Exception $e){}
 try{
 	$get_regions = $db->prepare("SELECT region_id, estado, regiao FROM regions ORDER BY estado");
 	$get_regions->execute();

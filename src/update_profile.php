@@ -3,7 +3,9 @@ $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
 //header('Content-Type: application/json');
+try{
 session_start();
+} catch (\Exception $e){}
 try {
 	$update_user = $db->prepare('UPDATE user SET name = :name, email = :email, password_hash = :password_hash, cpf = :cpf, gender = :gender, gender_identity = :gender_identity, contact = :contact, region = :region, is_escort = :is_escort, price = :price WHERE id = :id');
 	$update_fetish = $db->prepare('UPDATE user_fetishes SET fetish = :fetish WHERE id = :id');

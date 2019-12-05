@@ -7,8 +7,9 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 'gp');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
-
+try{
 session_start();
+} catch (\Exception $e){}
 function redirect_to_error(){
     echo '<script>window.location.href = "error.html";</script>';
 }

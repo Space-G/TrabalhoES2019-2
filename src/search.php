@@ -2,7 +2,9 @@
 $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp",'gp');
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
+try{
 session_start();
+} catch (\Exception $e){}
 try{
     if (isset($_POST)){ // recebeu informações suficientes para executar?
         $gender_string = implode(',', $_POST['gender']);
