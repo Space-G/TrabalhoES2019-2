@@ -2,7 +2,11 @@
 $db = new PDO('mysql:host=127.0.0.1;dbname=gabriels_picker;charset=utf8', "gp", 'gp');
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
-session_start();
+try{
+    session_start();
+} catch(\Exception $e){
+}
+
 try{
     if (isset($_SESSION['user_id']) && isset($_POST['target_id'])){ // recebeu informações suficientes para executar?
         $is_escort_stmt = $db->prepare('SELECT is_escort FROM user WHERE id = ?');

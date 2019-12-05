@@ -23,7 +23,14 @@ try {
 
     $db->commit();
 
-    echo json_encode(array('success' => true, 'msg' => null));
+    echo "Sucesso!
+    <script type='text/javascript'>
+    function red(){
+           window.location.href = '../Views/login.html';
+    }
+    
+    setTimeout(red, 3000);
+    </script>";
 }
 catch (\Exception $e){
     if ($db->inTransaction()){
