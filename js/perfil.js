@@ -18,6 +18,9 @@ function esconder_botoes( response ){
 	// 'id', 'is_friend', 'request_exists', is_escort
 	if (response['profile']['id'] == response['user']['id']){
 		$("#but0").removeAttr('hidden');
+		$('#pfp').on('click', function() {
+			$('#file').trigger('click');
+		});
 	} else if(response['user']['is_friend'] == true){
 		$("#but3").removeAttr('hidden');
 	} else if(response['profile']['is_escort'] == false && response['user']['request_exists'] == true){
@@ -31,7 +34,11 @@ function preencher_coisas(perfil){
 	// id, name, picture_file, gender, gender_identity, is_escort, price, contact
 	$('#nome').text('Nome: ' + perfil['name']);
 	$('#sexo').text(perfil['gender'] + ' ' + perfil['gender_identity']);
-	$('#img').attr('src',('../img/' + perfil['picture_file']));
+	if (perfil['picture_file'] != null) {
+		$('#img').attr('src', ('../img/' + perfil['picture_file']));
+	} else{
+		$('#img').attr('src',('../img/null.jpg'));
+	}
 }
 
 $.post("../src/get_profile.php", {target_id: getCookie('profile_id')})

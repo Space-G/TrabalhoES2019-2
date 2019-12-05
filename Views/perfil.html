@@ -17,7 +17,10 @@
 			<a href="home.html"><h4 class="letra-branca">Voltar</h4></a>
 		</div>
 		<div class="espacamento-topo espacamento-maior">
-            <img width="50%" id="img">
+            <a id="pfp"><img width="50%" id="img"></a>
+			<form action="../src/upload_image.php" method="post" enctype="multipart/form-data">
+				<input type="file" name="file" id="file" accept=".png,.jpg,.jpeg" onchange="javascript:this.form.submit();" hidden>
+			</form>
 			<p id="nome">Nome: </p>
 			<p id="sexo">Sexo: </p>
 			<p id="nota">Nota: </p>

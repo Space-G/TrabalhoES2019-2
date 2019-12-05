@@ -107,6 +107,10 @@ p {
 	outline: none !important;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 a:focus {
 	text-decoration: none !important;
 	outline: none !important;

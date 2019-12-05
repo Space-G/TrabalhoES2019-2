@@ -34,20 +34,20 @@ try{
         $temp = explode(".", $_FILES["file"]["name"]);
         $newfilename = round(microtime(true)) . '.' . end($temp); // dá nome de acordo com o tempo de upload
 
-        if (move_uploaded_file($_FILES["file"]["tmp_name"], "./ProfilePics" . $newfilename))) { // faz o upload
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], "../img/" . $newfilename)) { // faz o upload
 
             $old_file_stmt = $db->prepare('SELECT picture_file FROM user WHERE id = ?');
             $old_file_stmt->execute(array($_SESSION['user_id']));
             $old_file = $old_file_stmt->fetch(PDO::FETCH_NUM);
 
-            $old_filepath = './ProfilePics/'.$old_file;
+            $old_filepath = '../img/'.$old_file;
 
             unlink($old_filepath);
 
             $update_user_table_stmt = $db->prepare('UPDATE user SET picture_file = ? WHERE id = ?');
             $update_user_table_stmt->execute(array($newfilename, $_SESSION['user_id']));
 
-            echo '<script>window.location.href = "home.html";</script>';
+            echo '<script>window.location.href = "../Views/perfil.html";</script>';
         } else {
             redirect_to_error();
         }
