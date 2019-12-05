@@ -1,8 +1,9 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
+$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "gp","gp");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
-session_start();
+if (!isset($_COOKIE["PHPSESSID"])){
+session_start();}
 try{
     if (isset($_SESSION['user_id']) && isset($_POST['target_id']) && isset($_POST['rate'])){ // recebeu informações suficientes para executar?
         $already_friends_stmt = $db->prepare('SELECT COUNT(*) FROM friends WHERE client_id = ? AND escort_id = ?');

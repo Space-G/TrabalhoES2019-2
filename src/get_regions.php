@@ -1,8 +1,9 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
+$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "gp","gp");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
-session_start();
+if (!isset($_COOKIE["PHPSESSID"])){
+session_start();}
 try{
 	$get_regions = $db->prepare("SELECT region_id, estado, regiao FROM regions ORDER BY estado");
 	$get_regions->execute();

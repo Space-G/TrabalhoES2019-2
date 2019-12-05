@@ -1,9 +1,10 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
+$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "gp","gp");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
 //header('Content-Type: application/json');
-session_start();
+if (!isset($_COOKIE["PHPSESSID"])){
+session_start();}
 try {
 	$update_user = $db->prepare('UPDATE user SET name = :name, email = :email, password_hash = :password_hash, cpf = :cpf, gender = :gender, gender_identity = :gender_identity, contact = :contact, region = :region, is_escort = :is_escort, price = :price WHERE id = :id');
 	$update_fetish = $db->prepare('UPDATE user_fetishes SET fetish = :fetish WHERE id = :id');

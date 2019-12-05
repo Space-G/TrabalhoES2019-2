@@ -4,11 +4,12 @@ $target_file = $target_dir . basename($_FILES["file"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
+$db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "gp","gp");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
 
-session_start();
+if (!isset($_COOKIE["PHPSESSID"])){
+session_start();}
 function redirect_to_error(){
     echo '<script>window.location.href = "error.html";</script>';
 }
