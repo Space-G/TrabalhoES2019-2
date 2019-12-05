@@ -2,6 +2,7 @@
 $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
+session_start();
 $login_stmt = $db->prepare('SELECT password_hash, id FROM user WHERE email = ?');
 $login_stmt->execute(array($_POST['email']));
 $login_select = $login_stmt->fetch(PDO::FETCH_NUM);

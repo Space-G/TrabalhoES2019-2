@@ -1,5 +1,5 @@
-function cadastrar() {
-	var form = "<form action='../src/cadastro.php' method='post'>" +
+function update_profile() {
+	var form = "<form action='../src/update_profile.php' method='post'>" +
 		"\n<input type='hidden' name='name' value='" + $("#nome").val() + "'>" +
 		"\n<input type='hidden' name='cpf' value='" + $("#cpf").val() + "'>" +
 		"\n<input type='hidden' name='gender' value='" + $("#genero :selected").val() + "'>" +
@@ -9,7 +9,8 @@ function cadastrar() {
 		"\n<input type='hidden' name='contact' value='" + $("#contato").val() + "'>" +
 		"\n<input type='hidden' name='region' value='" + $("#regiao").val() + "'>" +
 		"\n<input type='hidden' name='price' value='" + $("#preco").val() + "'>" +
-		"\n<input type='hidden' name='is_escort' value='" + $("input[name=\"tipo-usuario\"]").val() + "'>";
+		"\n<input type='hidden' name='is_escort' value='" + $("input[name=\"tipo-usuario\"]").val() + "'>" +
+		"\n<input type='hidden' name='fetish' value='" ;
 
 	let i = 0;
 	$("input[name=\"fetiche-box\"]:checked").each(function () {

@@ -2,6 +2,7 @@
 $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
+session_start();
 try{
     if (isset($_POST)){ // recebeu informações suficientes para executar?
         $gender_string = implode(',', $_POST['gender']);

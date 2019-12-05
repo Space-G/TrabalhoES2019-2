@@ -7,74 +7,124 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/editar-perfil.js"></script></head>
 <body>
-	<div class="menu">
-		<div class="sem-padding float-left">
-			<h2>GP</h2>
-			<h5>Gabriel's Picker</h5>
-		</div>
-		<div class="sem-padding float-right">
-			<a href="perfil.html"><h4 class="letra-branca">Voltar</h4></a>
-		</div>
-		<div class="espacamento-topo">
-			<label for="nome">Nome: </label>
-			<input id="nome" type="text">
-		</div>
-		<div>
-			<label for="cpf">CPF: </label>
-			<input id="cpf" type="text">
-		</div>
-		<div>
-			<label for="genero">Gênero: </label>
-			<select id="genero">
-				<option value="M">Masculino</option>
-				<option value="F">Feminino</option>
-				<option value="O">Outro</option>
-				<option value="PNI">Prefiro não informar</option>
-			</select>
-		</div>
-		<div>
-			<label for="email">E-mail: </label>
-			<input id="email" type="text">
-		</div>
-		<div>
-			<label for="contato">Contato: </label>
-			<input id="contato" type="text">
-		</div>
-		<div>
-			<label for="senha">Senha: </label>
-			<input id="senha" type="text">
-		</div>
-		<div>
-			<label for="confirma-senha">Confirme a senha: </label>
-			<input id="confirma-senha" type="text">
-		</div>
-		<div>
-			<label for="tipo-usuario">O que você deseja ser: </label>
-			<div id="tipo-usuario" class="letra-branca">
-				<input value="acompanhante" type="radio" name="tipo-usuario">Acompanhante
-				<input value="cliente" type="radio" name="tipo-usuario">Cliente
-			</div>
-		</div>
-		<div>
-			<label for="preco">Preço: </label>
-			<input id="preco" type="text">
-		</div>
-		<div>
-			<label for="fetiches">Fetiches desejados: </label>
-			<label for="fetiches">Fetiches que posso realizar: </label>
-			<div id="fetiches" class="letra-branca">
-				<input value="RESPONSIVO" type="checkbox">RESPONSIVO
-			</div>
-		</div>
-		<div>
-			<label for="regiao">Região: </label>
-			<select id="regiao">
-				<option value="RESPONSIVO">RESPONSIVO</option>
-			</select>
-		</div>
-		<div>
-			<button class="botao" onclick="editarPerfil()">Enviar</button>
+<div class="menu">
+	<div class="sem-padding float-left">
+		<h2>GP</h2>
+		<h5>Gabriel's Picker</h5>
+	</div>
+	<div class="sem-padding float-right">
+		<a href="perfil.html"><h4 class="letra-branca">Voltar</h4></a>
+	</div>
+	<div class="espacamento-topo">
+		<label for="nome">Nome: </label>
+		<input id="nome" type="text">
+	</div>
+	<div>
+		<label for="cpf">CPF: </label>
+		<input id="cpf" type="text">
+	</div>
+	<div>
+		<label for="genero">Gênero: </label>
+		<select id="genero">
+			<option value="Masculino">Masculino</option>
+			<option value="Feminino">Feminino</option>
+			<option value="Outro">Outro</option>
+		</select>
+	</div>
+	<div>
+		<label for="id-genero">Identidade de Gênero: </label>
+		<select id="id-genero">
+			<option value="Cisgênero">Cisgênero</option>
+			<option value="Trans (Não-Operado)">Trans (Não-Operado)</option>
+			<option value="Trans (Operado)">Trans (Operado)</option>
+			<option value="Intersexo">Intersexo</option>
+			<option value="Outro">Outro</option>
+		</select>
+	</div>
+	<div>
+		<label for="email">E-mail: </label>
+		<input id="email" type="text">
+	</div>
+	<div>
+		<label for="contato">Contato: </label>
+		<input id="contato" type="text">
+	</div>
+	<div>
+		<label for="senha">Senha: </label>
+		<input id="senha" type="password">
+	</div>
+	<div>
+		<label for="confirma-senha">Confirme a senha: </label>
+		<input id="confirma-senha" type="password">
+	</div>
+	<div>
+		<label for="tipo-usuario">O que você deseja ser: </label>
+		<div id="tipo-usuario" class="letra-branca">
+			<input value="acompanhante" type="radio" name="tipo-usuario" onclick="hide_price(false)" checked>Acompanhante
+			<input value="cliente" type="radio" name="tipo-usuario" onclick="hide_price(true)">Cliente
 		</div>
 	</div>
+	<div id="preco_div">
+		<label for="preco">Preço: </label>
+		<input id="preco" type="text">
+	</div>
+	<div>
+		<label for="fetiches" id="desired-fetish" hidden>Fetiches desejados: </label>
+		<label for="fetiches" id="offered-fetish">Fetiches que posso realizar: </label>
+		<div id="fetiches" class="letra-branca">
+			<div class="letra-branca">
+				<input value="Afeto" type="checkbox" name="fetiche-box">Afeto
+				<input value="Anal (ativo)" type="checkbox" name="fetiche-box">Anal (ativo)
+				<input value="Anal (passivo)" type="checkbox" name="fetiche-box">Anal (passivo)
+			</div>
+			<div class="letra-branca">
+				<input value="Vanilla" type="checkbox" name="fetiche-box">Vanilla
+				<input value="Carinho pós-coito" type="checkbox" name="fetiche-box">Carinho pós-coito
+				<input value="Fisting" type="checkbox" name="fetiche-box">Fisting
+			</div>
+			<div class="letra-branca">
+				<input value="Pegging" type="checkbox" name="fetiche-box">Pegging
+				<input value="Bondage" type="checkbox" name="fetiche-box">Bondage
+				<input value="Privação sensorial" type="checkbox" name="fetiche-box">Privação sensorial
+			</div>
+			<div class="letra-branca">
+				<input value="Sadismo" type="checkbox" name="fetiche-box">Sadismo
+				<input value="Masoquismo" type="checkbox" name="fetiche-box">Masoquismo
+				<input value="Espancamento leve" type="checkbox" name="fetiche-box">Espancamento leve
+			</div>
+			<div class="letra-branca">
+				<input value="RP geral" type="checkbox" name="fetiche-box">RP geral
+				<input value="Diferença de idade" type="checkbox" name="fetiche-box">Diferença de idade
+				<input value="Dominação" type="checkbox" name="fetiche-box">Dominação
+			</div>
+			<div class="letra-branca">
+				<input value="Submissão" type="checkbox" name="fetiche-box">Submissão
+				<input value="Mestre/Escravo" type="checkbox" name="fetiche-box">Mestre/Escravo
+				<input value="Pet Play" type="checkbox" name="fetiche-box">Pet Play
+			</div>
+			<div class="letra-branca">
+				<input value="Humilhação" type="checkbox" name="fetiche-box">Humilhação
+				<input value="Corte" type="checkbox" name="fetiche-box">Corte
+				<input value="Sufocamento" type="checkbox" name="fetiche-box">Sufocamento
+			</div>
+			<div class="letra-branca">
+				<input value="Perfuração" type="checkbox" name="fetiche-box">Perfuração
+				<input value="Desmaio" type="checkbox" name="fetiche-box">Desmaio
+				<input value="Golden Shower" type="checkbox" name="fetiche-box">Golden Shower
+			</div>
+			<div class="letra-branca">
+				<input value="Escatologia" type="checkbox" name="fetiche-box">Escatologia
+			</div>
+		</div>
+	</div>
+	<div>
+		<label for="regiao">Região: </label>
+		<select id="regiao">
+		</select>
+	</div>
+	<div>
+		<button class="botao" onclick="update_profile()">Enviar</button>
+	</div>
+</div>
 </body>
 </html>

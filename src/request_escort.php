@@ -2,6 +2,7 @@
 $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root");
 $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extremamente importante pra debugar
 
+session_start();
 //header('Content-Type: application/json');
 try{
     if (isset($_SESSION['user_id']) && isset($_POST['target_id'])){ // recebeu informações suficientes para executar?

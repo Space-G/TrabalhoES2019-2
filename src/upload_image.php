@@ -8,6 +8,7 @@ $db = new PDO('mysql:host=localhost;dbname=gabriels_picker;charset=utf8', "root"
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 
 
+session_start();
 function redirect_to_error(){
     echo '<script>window.location.href = "error.html";</script>';
 }

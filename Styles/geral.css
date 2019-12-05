@@ -64,7 +64,7 @@ h5 {
 }
 
 div {
-	padding: 7px 10px 7px 10px;
+	padding: 20px 10px 20px 10px;
 }
 
 label {
@@ -139,4 +139,8 @@ a:active {
 
 .width-completo {
 	width: 75%;
+}
+
+label {
+    font-weight: bold !important;
 }
