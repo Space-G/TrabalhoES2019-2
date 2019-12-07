@@ -4,7 +4,9 @@ $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extre
 
 //header('Content-Type: application/json');
 try{
-session_start();
+	if(!isset($_SESSION)) {
+		session_start();
+	}
 } catch (\Exception $e){}
 try {
 	$update_user = $db->prepare('UPDATE user SET name = :name, email = :email, password_hash = :password_hash, cpf = :cpf, gender = :gender, gender_identity = :gender_identity, contact = :contact, region = :region, is_escort = :is_escort, price = :price WHERE id = :id');

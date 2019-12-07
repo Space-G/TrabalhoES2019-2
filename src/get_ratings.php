@@ -5,7 +5,9 @@ $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extre
 //header('Content-Type: application/json');
 
 try{
-session_start();
+	if(!isset($_SESSION)) {
+		session_start();
+	}
 } catch (\Exception $e){}
 try{
     if (isset($_POST['target_id'])){ // recebeu informações suficientes para executar?
