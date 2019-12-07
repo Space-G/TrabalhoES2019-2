@@ -5,7 +5,11 @@ $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extre
 //header('Content-Type: application/json');
 
 if(!isset($_SESSION)) {
-	session_start();
+	if(!isset($_SESSION)) {
+		session_start();
+	} elseif(empty($_SESSION)){
+		session_start();
+	}
 }
 try {
     $insertUser   = $db->prepare('INSERT INTO user( name,  email,  password_hash,  cpf,  gender,  gender_identity,  contact,  region,  is_escort, price) 

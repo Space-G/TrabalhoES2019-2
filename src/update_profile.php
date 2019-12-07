@@ -6,6 +6,8 @@ $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // isso é extre
 try{
 	if(!isset($_SESSION)) {
 		session_start();
+	} elseif(empty($_SESSION)){
+		session_start();
 	}
 } catch (\Exception $e){}
 try {

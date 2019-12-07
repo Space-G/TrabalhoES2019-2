@@ -5,7 +5,9 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extrema
 //header('Content-Type: application/json');
 try{
 	if(!isset($_SESSION)) {
-		sesson_start();
+		session_start();
+	} elseif(empty($_SESSION)){
+		session_start();
 	}
 } catch (\Exception $e){}
 try {

@@ -10,6 +10,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extrema
 try{
 	if(!isset($_SESSION)) {
 		session_start();
+	} elseif(empty($_SESSION)){
+		session_start();
 	}
 } catch (\Exception $e){}
 function redirect_to_error(){
