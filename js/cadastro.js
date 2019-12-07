@@ -12,6 +12,7 @@ function cadastrar() {
 		"\n<input type='hidden' name='is_escort' value='" + $("input[name=\"tipo-usuario\"]").val() + "'>";
 
 	let i = 0;
+	form = form + "\n<input type='hidden' name='fetish' value='";
 	$("input[name=\"fetiche-box\"]:checked").each(function () {
 		i++;
 		if(i > 1) {
