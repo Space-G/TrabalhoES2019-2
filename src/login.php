@@ -14,7 +14,7 @@ $login_select = $login_stmt->fetch(PDO::FETCH_NUM);
 //header('Content-Type: application/json');
 
 if (!empty($_POST['email']) && !empty($_POST['password'])){
-    if (count($login_select) > 0){
+    if (!empty($login_select)){
         $password = hash('sha512', $_POST['password']);
         if($password === $login_select[0]){
             session_start(['cookie_lifetime' => 86400]); // cookie expira em 1 dia
