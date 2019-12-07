@@ -22,6 +22,7 @@ CREATE TABLE user(
 	region INT(6) UNSIGNED NULL,
 	is_escort BOOLEAN NOT NULL,
 	price DECIMAL(7, 2) NULL,
+	is_admin BOOLEAN NOT NULL DEFAULT FALSE,
 	FOREIGN KEY (region) REFERENCES regions(region_id) ON DELETE SET NULL
 );
 
