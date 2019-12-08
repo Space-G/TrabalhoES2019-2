@@ -1,7 +1,6 @@
 <!--Confere informações do login-->
 <?php
-class loginDAO
-{
+class loginDAO{
 	function __construct(){}
 
 	function check($email, $senha, $connection){
