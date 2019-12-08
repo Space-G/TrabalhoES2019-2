@@ -39,4 +39,11 @@ class requestsDAO{
 			throw $e;
 		}
 	}
+
+//	seleciona todos requests que o usuário recebeu
+	function get_requests($user_id, $connection){
+		$requests = $connection->prepare("SELECT * FROM requests WHERE escort_id = ?");
+		$requests = $connection->execute(array($user_id));
+		return $requests->fetchAll();
+	}
 }
