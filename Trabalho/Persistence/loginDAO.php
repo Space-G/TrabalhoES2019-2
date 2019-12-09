@@ -29,7 +29,7 @@ class loginDAO{
 	function search_email($email, $connection){
 		$login_stmt = $connection->prepare('SELECT id FROM user WHERE email = ?');
 		$login_stmt->execute(array($email));
-		return $login_stmt->fetch(PDO::FETCH_NUM);
+		return $login_stmt->fetch(PDO::FETCH_NUM)[0];
 	}
 
 //	checa se usuário é adm
