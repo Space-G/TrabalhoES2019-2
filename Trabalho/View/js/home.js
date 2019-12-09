@@ -1,7 +1,12 @@
-function visitar_perfil(){
-	$.post('../src/get_own_id.php').done(function(data){
-		let response = JSON.parse(data)['own_id'];
-		document.cookie = ("profile_id=" + response);
-		document.location.href = '../Views/perfil.html';
+function my_profile(){
+	$.post('../../Controller/is_logged_in.php').done(function(data){
+		let response = JSON.parse(data);
+		if(response['logged_in']) {
+			document.cookie = ("profile_id=" + response['user_id']);
+			document.location.href = 'perfil.html';
+		} else{
+			document.location.href = 'login.html';
+		}
 	});
 }
+
