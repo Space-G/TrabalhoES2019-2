@@ -1,5 +1,5 @@
 function login(){
-    $.post('../src/login.php', { email: $("#username").val(), password: $("#password").val()})
+    $.post('../../Controller/login.php', { email: $("#username").val(), password: $("#password").val()})
         .done(function (data) {
         	console.log(data);
             let response = JSON.parse(data);

@@ -11,11 +11,12 @@ class db_connection{
 
 	function conectar(){
 		if($this->connection == null) {
-			$db = new PDO('mysql:host=' . $this->server_address . ';dbname=' . $this->dbname . ';charset=utf8', $this->dbuser, $this->dbpass);
-			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
+			$this->connection = new PDO('mysql:host=' . $this->server_address . ';dbname=' . $this->dbname . ';charset=utf8', $this->dbuser, $this->dbpass);
+			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // isso é extremamente importante pra debugar
 		} if(!$this->connection){
 			die(json_encode(array('success' => false, 'msg' => $this->connection->getMessage())));
 		}
+		return $this->connection;
 	}
 }
 ?>

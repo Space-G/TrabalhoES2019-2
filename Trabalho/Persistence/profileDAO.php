@@ -3,13 +3,6 @@
 class profileDAO{
 	function __construct(){}
 
-//	busca o id do email informado
-	function search_email($email, $connection){
-		$login_stmt = $connection->prepare('SELECT id FROM user WHERE email = ?');
-		$login_stmt->execute(array($email));
-		return $login_stmt->fetch(PDO::FETCH_NUM);
-	}
-
 //	cadastra usuário
 	function create_profile($name, $email, $password, $cpf, $gender, $gender_id, $contact, $region, $is_escort, $price, $connection){
 		$insert_user = $connection->prepare('INSERT INTO user( name,  email,  password_hash,  cpf,  gender,  gender_identity,  contact,  region,  is_escort, price) 

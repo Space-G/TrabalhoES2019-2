@@ -3,7 +3,8 @@
 class loginDAO{
 	function __construct(){}
 
-	function check($email, $senha, $connection){
+//	checa validade do e-mail
+	function check($email, $password, $connection){
 		$login_stmt = $connection->prepare('SELECT password_hash, id, is_admin FROM user WHERE email = ?');
 		$login_stmt->execute(array($email));
 		$login_select = $login_stmt->fetch(PDO::FETCH_NUM);
@@ -22,5 +23,19 @@ class loginDAO{
 		}else{
 			return false;
 		}
+	}
+
+//	busca o id do email informado
+	function search_email($email, $connection){
+		$login_stmt = $connection->prepare('SELECT id FROM user WHERE email = ?');
+		$login_stmt->execute(array($email));
+		return $login_stmt->fetch(PDO::FETCH_NUM);
+	}
+
+//	checa se usuário é adm
+	function is_adm($id, $connection){
+		$login_stmt = $connection->prepare('SELECT is_admin FROM user WHERE id = ?');
+		$login_stmt->execute(array($id));
+		return $login_stmt->fetch(PDO::FETCH_NUM);
 	}
 }
