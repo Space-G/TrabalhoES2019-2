@@ -43,7 +43,14 @@ class requestsDAO{
 //	seleciona todos requests que o usuário recebeu
 	function get_requests($user_id, $connection){
 		$requests = $connection->prepare("SELECT * FROM requests WHERE escort_id = ?");
-		$requests = $connection->execute(array($user_id));
+		$requests = $requests->execute(array($user_id));
 		return $requests->fetchAll();
+	}
+
+//	retorna true se usuários são amigos, false se não.
+	function are_friends($user_id, $target_id, $connection){
+		$friends_stmt = $connection->prepare("SELECT EXISTS(SELECT * FROM friends WHERE (client_id = ? AND escort_id = ?) OR (client_id = ? AND escort_id = ?))");
+		$friends_stmt->execute(array($user_id, $target_id, $target_id, $user_id));
+		return $friends_stmt->fetch(PDO::FETCH_NUM)[0];
 	}
 }
