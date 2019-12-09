@@ -1,5 +1,5 @@
-<!-- Assegura que sessão seja iniciada apropriadamente -->
 <?php
+// Assegura que sessão seja iniciada apropriadamente
 	try{
 		if(!isset($_SESSION)) {
 			session_start();

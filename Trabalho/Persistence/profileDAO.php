@@ -1,5 +1,5 @@
-<!--Realiza ações do usuário-->
 <?php
+// Realiza ações do usuário
 class profileDAO{
 	function __construct(){}
 

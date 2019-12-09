@@ -1,5 +1,5 @@
-<!--Interface responsável pela comunicação com o banco de dados em operações relacionadas à tabela dates-->
 <?php
+// Interface responsável pela comunicação com o banco de dados em operações relacionadas à tabela dates
 class datesDAO{
 	function __construct(){}
 

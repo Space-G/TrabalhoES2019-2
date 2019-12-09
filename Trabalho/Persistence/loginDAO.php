@@ -1,5 +1,5 @@
-<!--Confere informações do login-->
 <?php
+// Confere informações do login
 class loginDAO{
 	function __construct(){}
 

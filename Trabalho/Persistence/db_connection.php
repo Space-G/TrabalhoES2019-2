@@ -1,5 +1,5 @@
-<!--Faz conexão com o banco de dados-->
 <?php
+// Faz conexão com o banco de dados
 class db_connection{
 	private $server_address = "127.0.0.1";
 	private $dbname = "gabriels_picker";

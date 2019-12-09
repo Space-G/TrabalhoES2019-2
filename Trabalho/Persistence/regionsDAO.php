@@ -1,5 +1,5 @@
-<!--Responsável pelo CRUD da tabela regions-->
 <?php
+// Responsável pelo CRUD da tabela regions
 class regionsDAO{
 	function __construct(){}
 

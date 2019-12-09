@@ -1,5 +1,5 @@
-<!-- Lida com requisições de amizade -->
 <?php
+// Lida com requisições de amizade
 class requestsDAO{
 	function __construct(){}
 
