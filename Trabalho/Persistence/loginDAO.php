@@ -36,6 +36,6 @@ class loginDAO{
 	function is_adm($id, $connection){
 		$login_stmt = $connection->prepare('SELECT is_admin FROM user WHERE id = ?');
 		$login_stmt->execute(array($id));
-		return $login_stmt->fetch(PDO::FETCH_NUM);
+		return $login_stmt->fetch(PDO::FETCH_NUM)[0];
 	}
 }
