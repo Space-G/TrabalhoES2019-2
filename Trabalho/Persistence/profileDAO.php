@@ -6,7 +6,7 @@ class profileDAO{
 //	cadastra usuário
 	function create_profile($name, $email, $password, $cpf, $gender, $gender_id, $contact, $region, $is_escort, $price, $connection){
 		$insert_user = $connection->prepare('INSERT INTO user( name,  email,  password_hash,  cpf,  gender,  gender_identity,  contact,  region,  is_escort, price) 
-                                                     VALUES (:name, :email, :password_hash, :cpf, :gender, :gender_identity, :contact, :region, :is_escort, :price)');
+                                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 		$password_hash = hash('sha512', $password);
 		$check_availability = $connection->prepare('SELECT COUNT(*) FROM user WHERE email = ? OR cpf = ?');
 		$check_availability->execute(array($email, $cpf));
