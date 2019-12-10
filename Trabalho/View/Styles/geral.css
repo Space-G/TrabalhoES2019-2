@@ -148,3 +148,7 @@ a:active {
 label {
     font-weight: bold !important;
 }
+
+.inline {
+	display: inline-block;
+}
