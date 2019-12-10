@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu de região</title>
+	<link rel="stylesheet" type="text/css" href="../Styles/geral.css">
+	<script src="../js/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="../js/region.js"></script>
+</head>
+<body>
+	<div class="menu">
+		<div class="sem-padding float-left">
+			<h2>GP</h2>
+			<h5>Gabriel's Picker</h5>	
+		</div>
+		<div class="sem-padding float-right">
+			<h4 class="letra-branca">Admin</h4>
+		</div>
+		<div class="espacamento-topo">
+			<div>
+				<button class="botao botao-medio" onclick="adicionarRegiao()" id="adicionarRegiao">Adicionar região</button>
+			</div>
+			<div id="div_regiao">
+				<div class="espacamento-maior">
+					<h4 class="letra-branca alinhar-texto-esquerda">Opções dependentes de listagem:</h4>
+					<p>REGIAO #1</p>
+					<div>
+						<button class="botao botao-medio" onclick="atualizarRegiao()" id="atualizarRegiao">Atualizar região</button>
+					</div>
+					<div>
+						<button class="botao botao-medio" onclick="removerRegiao()" id="removerRegiao">Remover região</button>
+					</div>
+				</div>
+			</div>
+			<div class="espacamento-maior">
+				<a href="admin.html"><button class="botao">Voltar</button></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
