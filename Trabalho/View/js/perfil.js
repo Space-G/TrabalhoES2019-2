@@ -39,19 +39,13 @@ function preencher_coisas(perfil){
 	} else{
 		$('#img').attr('src',('../img/null.jpg'));
 	}
+	$('#nota').text(perfil['rating']);
 }
 
-$.post("../src/get_profile.php", {target_id: getCookie('profile_id')})
+$.post("../../Controller/get_profile.php", {target_id: getCookie('profile_id')})
 .done( function ( data ) {
 	console.log(data);
 	let response = JSON.parse(data);
 	esconder_botoes( response );
 	preencher_coisas( response['profile'] );
 });
-
-$.post("../src/get_ratings.php", {target_id: getCookie('profile_id')})
-	.done( function ( data ) {
-		console.log(data);
-		let response = JSON.parse(data);
-		$('#nota').text(response['msg']);
-	});
