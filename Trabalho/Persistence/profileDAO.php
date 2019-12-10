@@ -48,7 +48,7 @@ class profileDAO{
 	function get_profile($profile_id, $connection){
 		$profile = $connection->prepare("SELECT id, name, picture_file, email, gender, gender_identity, contact, price, is_escort, is_admin FROM user WHERE id = ?");
 		$profile->execute(array($profile_id));
-		return $profile->fetch(PDO::FETCH_NUM)[0];
+		return $profile->fetch();
 	}
 
 //	usuário dá nota a outro usuário
