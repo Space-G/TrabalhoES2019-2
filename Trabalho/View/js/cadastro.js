@@ -19,12 +19,8 @@ function cadastrar() {
 function hide_price(hide) {
 	if (hide){
 		$("#preco_div").attr('hidden', true);
-		$("#offered-fetish").attr('hidden', true);
-		$("#desired-fetish").removeAttr('hidden');
 	} else{
 		$("#preco_div").removeAttr('hidden');
-		$("#desired-fetish").attr('hidden', true);
-		$("#offered-fetish").removeAttr('hidden');
 	}
 }
 

@@ -19,7 +19,7 @@ class profileDAO{
 	}
 
 //	atualiza usuário usando seu cpf de base
-	function update_profile($name, $email, $password, $cpf, $gender, $gender_id, $contact, $region, $is_escort, $price, $connection){
+	function update_profile($user_id, $name, $email, $password, $gender, $gender_id, $contact, $region, $is_escort, $price, $connection){
 		$update_user = $connection->prepare('UPDATE user SET 
                 name = :name, 
                 email = :email, 
@@ -29,19 +29,19 @@ class profileDAO{
                 contact = :contact, 
                 region = :region, 
                 is_escort = :is_escort, 
-                price = :price WHERE cpf = :cpf');
+                price = :price WHERE id = :id');
 		$password_hash = hash('sha512', $password);
 		return $update_user->execute( array(
 			':name' => $name,
 			':email' => $email,
 			':password_hash' => $password_hash,
-			':cpf' => $cpf,
 			':gender' => $gender,
 			':gender_identity' => $gender_id,
 			':contact' => $contact,
 			':region' => $region,
 			':is_escort' => $is_escort,
-			':price' => $price) );
+			':price' => $price,
+			':id' => $user_id) );
 	}
 
 //	busca perfil com base no id

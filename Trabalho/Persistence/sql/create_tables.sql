@@ -21,18 +21,10 @@ CREATE TABLE user(
 	contact VARCHAR(128) NULL,
 	region INT(6) UNSIGNED NULL,
 	is_escort BOOLEAN NOT NULL,
-	price DECIMAL(7, 2) NULL,
+	price DECIMAL(7, 2) NULL DEFAULT 0,
 	is_admin BOOLEAN NOT NULL DEFAULT FALSE,
 	FOREIGN KEY (region) REFERENCES regions(region_id) ON DELETE SET NULL
 );
-
-CREATE TABLE user_fetishes(
-	id INT(6) UNSIGNED PRIMARY KEY,
-	FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE,
-	fetish SET('Afeto', 'Anal (ativo)', 'Anal (passivo)', 'Vanilla', 'Carinho pós-coito', 'Fisting', 'Pegging',
-		'Bondage', 'Privação sensorial', 'Sadismo', 'Masoquismo', 'Espancamento leve', 'RP geral', 'Diferença de idade',
-		'Dominação', 'Submissão', 'Mestre/Escravo', 'Pet play', 'Humilhação', 'Corte', 'Perfuração', 'Sufocamento',
-		'Desmaio', 'Golden Shower', 'Escatologia') NULL);
 
 CREATE TABLE requests(
 	client_id INT(6) UNSIGNED NOT NULL,
@@ -48,15 +40,6 @@ CREATE TABLE friends(
 	 PRIMARY KEY (client_id, escort_id),
 	 FOREIGN KEY (client_id) REFERENCES user(id) ON DELETE CASCADE,
 	 FOREIGN KEY (escort_id) REFERENCES user(id) ON DELETE CASCADE
-);
-
-CREATE TABLE ratings(
-	rater_id INT(6) UNSIGNED NOT NULL,
-	subject_id INT(6) UNSIGNED NOT NULL,
-	score DECIMAL(1) NOT NULL,
-	PRIMARY KEY (rater_id, subject_id),
-	FOREIGN KEY (rater_id) REFERENCES user(id) ON DELETE CASCADE,
-	FOREIGN KEY (subject_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
 CREATE TABLE dates(
