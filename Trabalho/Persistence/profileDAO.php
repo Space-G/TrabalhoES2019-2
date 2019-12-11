@@ -51,6 +51,13 @@ class profileDAO{
 		return $profile->fetch();
 	}
 
+//	lista perfis
+	function list_profile($connection){
+		$list_profiles = $connection->prepare("SELECT id, name, picture_file, email, gender, gender_identity, contact, price, region, is_escort, is_admin FROM user");
+		$list_profiles->execute();
+		return $list_profiles->fetchAll();
+	}
+
 //	adiciona foto
 	function add_picture($user_id, $picture_file, $connection){
 		$add = $connection->prepare('UPDATE user SET picture_file = ? WHERE id = ?');
