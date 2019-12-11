@@ -14,6 +14,8 @@ function getCookie(cname) {
 	return "";
 }
 
+var contato = "";
+
 function esconder_botoes( response ){
 	// 'id', 'is_friend', 'request_exists', is_escort
 	if (response['profile']['id'] == response['user']['id']){
@@ -21,11 +23,12 @@ function esconder_botoes( response ){
 		$('#pfp').on('click', function() {
 			$('#file').trigger('click');
 		});
-	} else if(response['user']['is_friend'] == true){
+	} else if(response['user']['is_friend'] == 1){
 		$("#but3").removeAttr('hidden');
-	} else if(response['profile']['is_escort'] == false && response['user']['request_exists'] == true){
+		contato = response['profile']['contact'];
+	} else if(response['profile']['is_escort'] == 0 && response['user']['request_exists'] == 1){
 		$("#but2").removeAttr('hidden');
-	} else if(response['user']['request_exists'] == false && response['profile']['is_escort'] == true && response['user']['is_escort'] == false){
+	} else if(response['user']['request_exists'] == 0 && response['profile']['is_escort'] == 1 && response['user']['is_escort'] == 0){
 		$("#but1").removeAttr('hidden');
 	}
 }
@@ -43,8 +46,32 @@ function preencher_coisas(perfil){
 
 $.post("../../Controller/get_profile.php", {target_id: getCookie('profile_id')})
 .done( function ( data ) {
-	console.log(data);
 	let response = JSON.parse(data);
+	console.log(response);
 	esconder_botoes( response );
 	preencher_coisas( response['profile'] );
 });
+
+function solicitar_acompanhante(){
+	$.post("../../Controller/request_handler.php", {
+		func: "add",
+		target_id: getCookie('profile_id')
+	}).done(function(data){
+		console.log(data);
+		location.reload(true);
+		})
+}
+
+function aceitar_solicitacao(){
+	$.post("../../Controller/request_handler.php", {
+		func: "accept",
+		target_id: getCookie('profile_id')
+	}).done(function(data){
+		console.log(data);
+		location.reload(true);
+	})
+}
+
+function visualizar_contato(){
+	alert(contato);
+}
