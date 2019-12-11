@@ -17,7 +17,9 @@ $.post("../../Controller/list_profiles.php", {}).done(function(data){
 
 		aux_str = aux_str +  response[i]['gender_identity'] + " </p>\n" +
 			"</div></a>";
-		$("#colocar-perfis-aqui").append(aux_str);
+		if (response[i]['is_escort'] == 1) {
+			$("#colocar-perfis-aqui").append(aux_str);
+		}
 	}
 });
 
