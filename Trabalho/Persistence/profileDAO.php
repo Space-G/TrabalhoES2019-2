@@ -72,4 +72,10 @@ class profileDAO{
 		$rate->execute(array($target_id));
 		return $rate->fetch(PDO::FETCH_NUM)[0];
 	}
+
+//	adiciona foto
+	function add_picture($user_id, $picture_file, $connection){
+		$add = $connection->prepare('UPDATE user SET picture_file = ? WHERE id = ?');
+		$add->execute(array($picture_file, $user_id));
+	}
 }

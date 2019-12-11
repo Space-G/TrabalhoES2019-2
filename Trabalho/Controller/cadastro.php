@@ -24,7 +24,7 @@ if($profileDAO->create_profile($name, $email, $password, $cpf, $gender, $gender_
 	echo "Sucesso!
 	<script type='text/javascript'>
 	function red(){
-		   window.location.href = '../View/html/login.html';
+		   window.location.href = '../View/login.html';
 	}
 	
 	setTimeout(red, 3000);
@@ -33,7 +33,7 @@ if($profileDAO->create_profile($name, $email, $password, $cpf, $gender, $gender_
 	echo "Informações inválidas
 	<script type='text/javascript'>
 	function red(){
-		   window.location.href = '../View/html/cadastro.html';
+		   window.location.href = '../View/cadastro.html';
 	}
 	
 	setTimeout(red, 3000);
