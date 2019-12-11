@@ -16,7 +16,6 @@ $user = array('id' => $_SESSION['user_id'],
 			'is_escort' => $profile->get_profile($_SESSION['user_id'], $db)['is_escort']);
 
 $get_profile = $profile->get_profile($_POST['target_id'], $db);
-$get_profile['rating'] = $profile->get_rate($_POST['target_id'], $db);
 echo json_encode(array('success' => true, 'msg' => null, 'profile' => $get_profile, 'user' => $user))
 
 ?>

@@ -39,7 +39,6 @@ function preencher_coisas(perfil){
 	} else{
 		$('#img').attr('src',('../img/null.jpg'));
 	}
-	$('#nota').text(perfil['rating']);
 }
 
 $.post("../../Controller/get_profile.php", {target_id: getCookie('profile_id')})
