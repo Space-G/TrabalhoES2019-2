@@ -32,7 +32,7 @@ function esconder_botoes( response ){
 
 function preencher_coisas(perfil){
 	// id, name, picture_file, gender, gender_identity, is_escort, price, contact
-	$('#nome').text('Nome: ' + perfil['name']);
+	$('#nome').text( perfil['name']);
 	$('#sexo').text(perfil['gender'] + ' ' + perfil['gender_identity']);
 	if (perfil['picture_file'] != null) {
 		$('#img').attr('src', ('../img/' + perfil['picture_file']));
