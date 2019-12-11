@@ -43,6 +43,35 @@ function getCookie(cname) {
 $.post("../../Controller/request_handler.php", {
 	func: "get_requests"
 }).done(function(data){
-	console.log(data);
+	// console.log(data);
 	// location.reload(true);
+	let response = JSON.parse(data);
+
+	for(let i = 0; i < response.length; i++){
+		$.post("../../Controller/get_profile.php", {target_id: response[i]['client_id']}).done(function(new_data){
+			console.log(new_data);
+			let this_response = JSON.parse(new_data)['profile'];
+			let aux_str = "<a onclick='check_profile(" + this_response['id'] + ")'><div class='inline'>\n" +
+				"<div style='background-image: url(../img/" + this_response['picture_file'] + ");background-size: cover;background-repeat: no-repeat;width: 145px;height: 145px;background-position: center;'></div>\n" +
+				"<p>" + this_response['name'] + "</p>\n" +
+				"<p class='simbolo'>";
+
+			if(this_response['gender'].toLowerCase() == "masculino"){
+				aux_str = aux_str +'♂ ';
+			}else if (this_response['gender'].toLowerCase() == "feminino"){
+				aux_str = aux_str + '♀ ';
+			}else{
+				aux_str = aux_str + '⚲ ';
+			}
+
+			aux_str = aux_str +  this_response['gender_identity'] + " </p>\n" +
+				"</div></a>";
+			$("#notif").append(aux_str);
+		});
+	}
 })
+
+function check_profile(id){
+	document.cookie = ("profile_id=" + id);
+	document.location.href = 'perfil.html';
+}
