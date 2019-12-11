@@ -38,3 +38,13 @@ function atualizar_regiao(id){
 		location.reload(true);
 	});
 }
+
+function remover_regiao(id){
+	$.post("../../Controller/update_region.php", {
+		func: 'remove',
+		region_id: id
+	}).done(function (data) {
+		console.log(data);
+		location.reload(true);
+	});
+}

@@ -14,6 +14,6 @@ if ($_POST['func'] == "add") {
 } elseif ($_POST['func'] == 'change'){
 	print_r($regionsDAO->update_region($_POST['region_id'], $_POST['estado'], $_POST['regiao'], $db));
 } else{
-	print_r($regionsDAO->create_region($_POST['region_id'], $db));
+	print_r($regionsDAO->delete_region($_POST['region_id'], $db));
 }
 ?>
