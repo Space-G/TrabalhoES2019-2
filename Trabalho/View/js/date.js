@@ -1,53 +1,16 @@
-// function adicionar_date(){
-// 	$.post("../../Controller/update_region.php", {
-// 		func: 'add',
-// 		estado: $("#new-region-estado").val(),
-// 		regiao: $("#new-region-regiao").val()
-// 	})
-// 		.done(function (data) {
-// 			console.log(data);
-// 			location.reload(true);
-// 		});
-// }
-//
-// $.post("../../Controller/get_regions.php", {}).done(function(data){
-// 	let response = JSON.parse(data);
-// 	if(response['success']){
-// 		for(let i = 0; i < response['msg'].length; i++){
-// 			let aux_str = "<div><input type='text' maxlength='2' minlength='2' id='new-region-estado-" + response['msg'][i]['region_id'] + "' style='width: 2em' value='" + response['msg'][i]['estado'] + "'/>\n" +
-// 				"<input type='text' id='new-region-regiao-" + response['msg'][i]['region_id'] + "' value='" + response['msg'][i]['regiao'] + "'/>\n" +
-// 				"</div><div>" +
-// 				"<button class='botao botao-medio' onclick='atualizar_date(" + response['msg'][i]['region_id'] + ")' id='atualizarRegiao'>Atualizar região</button>\n" +
-// 				"<button class='botao botao-medio' onclick='remover_date(" + response['msg'][i]['region_id'] + ")' id='removerRegiao'>Remover região</button></div>";
-// 			$("#region-list").append(aux_str)
-// 		}
-// 	}
-// })
-//
-// function atualizar_date(id){
-// 	let new_estado = "#new-region-estado-" + id;
-// 	let new_region = "#new-region-regiao-" + id;
-//
-// 	$.post("../../Controller/update_region.php", {
-// 		func: 'change',
-// 		region_id: id,
-// 		estado: $(new_estado).val(),
-// 		regiao: $(new_region).val()
-// 	}).done(function (data) {
-// 		console.log(data);
-// 		location.reload(true);
-// 	});
-// }
-//
-// function remover_date(id){
-// 	$.post("../../Controller/update_region.php", {
-// 		func: 'remove',
-// 		region_id: id
-// 	}).done(function (data) {
-// 		console.log(data);
-// 		location.reload(true);
-// 	});
-// }
+function adicionar_date(){
+	$.post("../../Controller/update_date.php", {
+		func: 'add',
+		add_date_id1: $("#add-date-id1").val(),
+		add_date_id2: $("#add-date-id2").val(),
+		add_date_data: $("#add-date-data").val(),
+		add_date_regiao: $("#add-date-regiao").val()
+	})
+		.done(function (data) {
+			console.log(data);
+			// location.reload(true);
+		});
+}
 
 $.post("../../Controller/list_profiles.php", {}).done(function(data){
 	let response = JSON.parse(data)[0];
@@ -70,5 +33,14 @@ $.post("../../Controller/list_profiles.php", {}).done(function(data){
 		aux_str = aux_str +  response[i]['gender_identity'] + " </p>\n" +
 			"</div>";
 		$("#colocar-perfis-aqui").append(aux_str);
+	}
+});
+
+$.post('../../Controller/get_regions.php').done(function (data){
+	let response = JSON.parse(data);
+	if (response['success']){
+		for (let i = 0; i < response['msg'].length; i++){
+			$('#add-date-regiao').append('<option value="' + response['msg'][i]['region_id'] + '">' + response['msg'][i]['estado'] + ' - ' + response['msg'][i]['regiao'] + '</option>');
+		}
 	}
 });

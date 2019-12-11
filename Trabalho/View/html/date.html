@@ -18,7 +18,16 @@
 		</div>
 		<div class="espacamento-topo">
 			<div>
-				<button class="botao botao-medio" onclick="adicionarDate()" id="adicionarDate">Adicionar date</button>
+			<form id="add-date">
+				<input type="text" maxlength="4" minlength="1" id="add-date-id1" style="width: 2em" placeholder="ID"/>
+				<input type="text" maxlength="4" minlength="1" id="add-date-id2" style="width: 2em" placeholder="ID"/>
+				<input type="date" id="add-date-data">
+				<select id="add-date-regiao">
+				</select>
+			</form>
+			</div>
+			<div>
+				<button class="botao botao-medio" onclick="adicionar_date()" id="adicionarDate">Adicionar date</button>
 			</div>
 			<div id="div_date">
 				<div class="espacamento-maior">
