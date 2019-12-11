@@ -39,3 +39,10 @@ function getCookie(cname) {
 	}
 	return "";
 }
+
+$.post("../../Controller/request_handler.php", {
+	func: "get_requests"
+}).done(function(data){
+	console.log(data);
+	// location.reload(true);
+})

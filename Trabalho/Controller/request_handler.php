@@ -13,6 +13,8 @@ if($_POST['func'] == 'add'){
 	print_r($requests->create_request($_SESSION['user_id'], $_POST['target_id'], $db));
 } elseif ($_POST['func'] == 'accept'){
 	print_r($requests->accept_request($_SESSION['user_id'], $_POST['target_id'], $db));
+} elseif ($_POST['func'] == 'get_requests'){
+	print_r($requests->get_requests($_SESSION['user_id'], $db));
 }
 
 ?>

@@ -8,7 +8,7 @@ function update_profile() {
 		"\n<input type='hidden' name='contact' value='" + $("#contato").val() + "'>" +
 		"\n<input type='hidden' name='region' value='" + $("#regiao").val() + "'>" +
 		"\n<input type='hidden' name='price' value='" + $("#preco").val() + "'>" +
-		"\n<input type='hidden' name='is_escort' value='" + $("input[name=\"tipo-usuario\"]").val() + "'>" +
+		"\n<input type='hidden' name='is_escort' value='" + $("input[name=\"tipo-usuario\"]:checked").val() + "'>" +
 		"\n</form>";
 
 	// console.log(form);
