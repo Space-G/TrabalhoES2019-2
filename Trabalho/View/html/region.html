@@ -18,16 +18,20 @@
 		</div>
 		<div class="espacamento-topo">
 			<div>
-				<button class="botao botao-medio" onclick="adicionarRegiao()" id="adicionarRegiao">Adicionar região</button>
+				<form>
+					<input type="text" maxlength="2" minlength="2" id="new-region-estado" style="width: 2em" placeholder="UF"/>
+					<input type="text" id="new-region-regiao" placeholder="Região"/>
+				</form>
+			</div>
+			<div>
+				<button class="botao botao-medio" onclick="adicionar_regiao()" id="adicionarRegiao">Adicionar região</button>
 			</div>
 			<div id="div_regiao">
 				<div class="espacamento-maior">
 					<h4 class="letra-branca alinhar-texto-esquerda">Opções dependentes de listagem:</h4>
-					<p>REGIAO #1</p>
 					<div>
+						<p>REGIAO #1</p>
 						<button class="botao botao-medio" onclick="atualizarRegiao()" id="atualizarRegiao">Atualizar região</button>
-					</div>
-					<div>
 						<button class="botao botao-medio" onclick="removerRegiao()" id="removerRegiao">Remover região</button>
 					</div>
 				</div>

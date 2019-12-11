@@ -6,7 +6,8 @@ class regionsDAO{
 //	cria uma nova região
 	function create_region($estado, $regiao, $connection){
 		$new_region = $connection->prepare("INSERT INTO regions(estado, regiao) VALUES (?, ?)");
-		return $new_region->execute(array($estado, $regiao));
+		$new_region->execute(array($estado, $regiao));
+		return $new_region->rowCount();
 	}
 
 //	seleciona todas regiões
