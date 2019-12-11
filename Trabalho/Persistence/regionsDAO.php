@@ -12,7 +12,7 @@ class regionsDAO{
 
 //	seleciona todas regiões
 	function get_region($connection){
-		return $connection->query("SELECT * FROM regions")->fetchAll();
+		return $connection->query("SELECT * FROM regions ORDER BY estado")->fetchAll();
 	}
 
 //	edita região de ID selecionado
