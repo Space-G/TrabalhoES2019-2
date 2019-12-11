@@ -21,7 +21,9 @@ class datesDAO{
 
 //	lista TODOS os dates
 	function get_all_dates($connection){
-		return $connection->query("SELECT * FROM dates");
+		$get_dates = $connection->prepare("SELECT * FROM dates");
+		$get_dates->execute();
+		return $get_dates->fetchAll();
 	}
 
 //	atualiza date alvo

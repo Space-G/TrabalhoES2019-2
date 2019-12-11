@@ -152,3 +152,7 @@ label {
 .inline {
 	display: inline-block;
 }
+
+.simbolo::first-letter {
+	font-size: 25px;
+}
