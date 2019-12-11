@@ -63,4 +63,10 @@ class requestsDAO{
 		$friends_stmt->execute(array($user_id, $target_id, $target_id, $user_id));
 		return $friends_stmt->fetch(PDO::FETCH_NUM)[0];
 	}
+
+	function get_friends($user_id, $connection){
+		$requests = $connection->prepare("SELECT * FROM friends WHERE escort_id = ? OR client_id = ?");
+		$requests->execute(array($user_id, $user_id));
+		return $requests->fetchAll();
+	}
 }

@@ -15,6 +15,8 @@ if($_POST['func'] == 'add'){
 	print_r($requests->accept_request($_SESSION['user_id'], $_POST['target_id'], $db));
 } elseif ($_POST['func'] == 'get_requests'){
 	echo json_encode($requests->get_requests($_SESSION['user_id'], $db));
+} else{
+	echo json_encode($requests->get_friends($_SESSION['user_id'], $db));
 }
 
 ?>
