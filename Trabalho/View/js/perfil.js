@@ -23,6 +23,7 @@ function esconder_botoes( response ){
 		$('#pfp').on('click', function() {
 			$('#file').trigger('click');
 		});
+		$("#but4").removeAttr('hidden');
 	} else if(response['user']['is_friend'] == 1){
 		$("#but3").removeAttr('hidden');
 		contato = response['profile']['contact'];

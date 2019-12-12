@@ -5,14 +5,16 @@ class requestsDAO{
 
 //	cria uma solicitação de amizade
 	function create_request($user_id, $target_id, $connection){
-		$check_validity = $connection->prepare('SELECT count(*) FROM user WHERE (id = ? AND is_escort = false) OR (id = ? AND is_escort = TRUE)');
-		$check_validity->execute(array($user_id, $target_id));
-		$check_validity = $check_validity->fetch(PDO::FETCH_NUM)[0];
-		if($check_validity == 2){
-			$request = $connection->prepare('INSERT INTO requests(client_id, escort_id) VALUES (?, ?)');
-			return $request->execute(array($user_id, $target_id));
-		} else{
-			return false;
+		if(($this->are_friends($user_id, $target_id, $connection) > 0) || ($_SESSION['is_admin'] == 1)){
+			$check_validity = $connection->prepare('SELECT count(*) FROM user WHERE (id = ? AND is_escort = false) OR (id = ? AND is_escort = TRUE)');
+			$check_validity->execute(array($user_id, $target_id));
+			$check_validity = $check_validity->fetch(PDO::FETCH_NUM)[0];
+			if ($check_validity == 2) {
+				$request = $connection->prepare('INSERT INTO requests(client_id, escort_id) VALUES (?, ?)');
+				return $request->execute(array($user_id, $target_id));
+			} else {
+				return false;
+			}
 		}
 	}
 

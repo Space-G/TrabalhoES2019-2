@@ -156,3 +156,21 @@ label {
 .simbolo::first-letter {
 	font-size: 25px;
 }
+
+.negrito {
+	font-weight: bold;
+}
+
+.input-id {
+	border-radius: 15% !important;
+}
+
+input {
+	border: 1px solid gray;
+	border-radius: 4%;
+}
+
+.input::placeholder {
+	text-align: center;
+	color: gray;
+}
